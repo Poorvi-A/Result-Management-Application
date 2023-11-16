@@ -1,0 +1,41 @@
+<%-include('partials/_header')%>
+
+  <!-- main site -->
+  <main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+           <div class="filter">
+              <a href="/view_all"><i class="fas fa-angle-double-left"></i>All Students</a>
+           </div>
+        </div>
+        <div class="form-title text-center">
+          <h2 class="text-dark">New Student</h2>
+          <span class="text-light">Use the below form to add a student</span>
+        </div>
+        <!-- form handling -->
+        <form  action="/api/student" method="POST" id="add_student">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Roll No. : </label>
+                <input type="number" name="roll" required class="form-control" id="">
+              </div>
+              <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Name : </label>
+                  <input type="text" name="name" required class="form-control" id="exampleInputEmail1" >
+                </div>
+                
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">DOB : </label>
+                  <input type="date" name="dob" class="form-control" id="exampleInputEmail1">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Score : </label>
+                  <input type="number" name="score" required class="form-control" id="exampleInputEmail1">
+                </div>
+              <button type="submit" class="btn btn-success">Add</button>
+             
+        </form>
+          
+    </div>
+  </main>
+
+  <%- include('partials/_footer')%>

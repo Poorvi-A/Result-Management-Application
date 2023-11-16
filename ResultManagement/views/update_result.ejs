@@ -1,0 +1,49 @@
+<%-include('partials/_header')%>
+
+  <!-- main site -->
+  <main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+           <div class="filter">
+              <a href="/view_all"><i class="fas fa-angle-double-left"></i>All Students</a>
+           </div>
+        </div>
+        <div class="form-title text-center">
+          <h2 class="text-dark">Edit Result</h2>
+          <span class="text-light">Use the below form to update a result</span>
+        </div>
+        <!-- form handling -->
+        <form method="POST" id="update_student">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Roll No. : </label>
+                <input type="number" name="roll" value="<%= student.roll %>" required class="form-control" id="exampleInputEmail1">
+              </div>
+              <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Name : </label>
+                  <input type="text" name="name" value="<%= student.name%>" required class="form-control" id="exampleInputEmail1" >
+                </div>
+                
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Date of Birth : </label>
+                  <input type="date" name="dob" value="<%= formatDate(student.dob)%>" class="form-control" id="exampleInputEmail1">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Score : </label>
+                  <input type="number" name="score" value="<%= student.score%>" required class="form-control" id="exampleInputEmail1">
+                </div>
+              <button type="submit" class="btn btn-success">Update</button>
+             
+        </form>
+          
+    </div>
+  </main>
+  <% function formatDate(dateString) {
+    const date = new Date(dateString);
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+    return `${year}-${month}-${day}`;
+  } %>
+  
+
+<%- include('partials/_footer')%>

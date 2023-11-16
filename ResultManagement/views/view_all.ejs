@@ -1,0 +1,40 @@
+<%- include('partials/_header')%>
+
+ <!-- main site -->
+ <main id="site-main">
+    <div class="container">
+      <div class="box-nav d-flex justify-between">
+        <div class="filter">
+           <a href="/teacher_login"><i class="fas fa-angle-double-left"></i>Back</a>
+        </div>
+     </div>
+
+        <div class="box-nav d-flex justify-between">
+            <a href="/add-student" class="border-shadow">
+                <span class="text-gradient">Add-Student <i class="fa-solid fa-user-plus"></i></span>
+            </a>
+        </div>
+       
+        <!-- form handling -->
+        <form action="/" method="POST">
+          <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                   <th>Roll No.</th>
+                   <th>Name</th>
+                   <th>Dob</th>
+                   <th>Scores</th>
+                   <th>Action</th>
+                   
+                </tr>
+              </thead>
+              <tbody>
+                <%-include('partials/_viewAll')%> 
+              </tbody>
+          </table>
+        </form>
+    </div>
+  </main>
+  
+  <!-- footer -->
+ <%- include('partials/_footer') %> 

@@ -1,0 +1,49 @@
+<%- include('partials/_header') %>
+
+<div class="box-nav d-flex justify-between">
+  <div class="filter">
+    <a href="/" style="margin-top: 5px;"><i class="fas fa-angle-double-left"></i>Back</a>
+  </div>
+</div>
+
+<div class="center-table">
+  <table class="login-table">
+    <tr>
+      <td>
+        <p class="heading">Teacher Login</p>
+        <div class="LogForm">
+          <form method="POST" onsubmit="return validateForm()">
+            <table>
+              <tr>
+                <td>
+                  <label for="pass" class="form-label">Password:</label>
+                </td>
+                <td>
+                  <input type="password" name="password" class="form-control" id="pass" required>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <input type="checkbox" style="width: 30px;" onclick="showPassword()"> Show Password
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <div id="passwordValidation" style="color: red;"></div>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2" class="text-center">
+                  <button type="submit" class="btn btn-outline-success">Submit</button>
+                </td>
+                
+              </tr>
+            </table>
+          </form>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<%- include('partials/_footer') %>
